@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <a style="margin-top: 10px;" class="waves-effect waves-light btn indigo darken-4 "
+                (click)="logout()">Salir</a>
+
+
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs z-depth-1" style="margin-top: 10px;">
+                        <li class="tab col s4"><a class="active" href="#ambulancias">Ambulancias</a>
+                        </li>
+                        <li class="tab col s4"><a  href="#pacientes">Pacientes</a></li>
+                        <li class="tab col s4"><a  href="#nuevoModerador">Nuevo moderador</a></li>
+                    </ul>
+                </div>
+                <div class="col s12">
+                    <div class="card" id="ambulancias" style="margin-top: 10px;">
+                        <div class="card-content" style="padding: 20px 0px 0px 0px;">
+                            <div class="card-title" style="margin-left: 20px;">Ambulancias</div>
+                            <app-lista-conductores></app-lista-conductores>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="card" id="pacientes" style="margin-top: 10px;">
+                        <div class="card-content" style="padding: 20px 0px 0px 0px;">
+                            <div class="card-title" style="margin-left: 20px;">Pacientes</div>
+                            <app-lista-pacientes></app-lista-pacientes>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="card" id="nuevoModerador" style="margin-top: 10px;">
+                        <div class="card-content" style="">
+                            <div class="card-title">Añadir un moderador</div>
+                            <app-nuevo></app-nuevo>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

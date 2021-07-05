@@ -1,0 +1,20 @@
+<ul class="collection ">
+    <li class="collection-item avatar" *ngFor="let solicitud of solicitudes">
+
+        <p>
+            <b style="font-size: 1.3rem;">{{solicitud.tipoEmergencia}}</b> <br>
+            <b>Fecha: </b>{{solicitud.createdAt.toDate() | date:'medium'}} <br>
+            <b>Ciudad: </b>{{solicitud.ciudad}}
+        </p>
+        <span *ngIf="solicitud.completado" class="new badge secondary-content green darken-4"
+            data-badge-caption="">Completada</span>
+        <span *ngIf="!solicitud.completado" class="new badge secondary-content amber darken-1"
+            data-badge-caption="">Pendiente</span>
+
+        <a *ngIf="!solicitud.completado" (click)="removeSolicitud(solicitud.id)"
+                class=" waves-effect waves-light btn-small red darken-4" style="margin-top: 10px;">Cancelar</a>
+    </li>
+    <li class="collection-item avatar" *ngIf="solicitudes.length == 0">
+        <p style="text-align: center; margin-top: 10px; font-size: 1.3rem;">No hay resultados disponibles.</p>
+    </li>
+</ul>

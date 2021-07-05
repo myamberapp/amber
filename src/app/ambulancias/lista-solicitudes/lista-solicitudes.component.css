@@ -1,0 +1,5 @@
+.collection .collection-item.avatar {
+    min-height: 84px;
+    padding-left: 20px;
+    position: relative;
+}

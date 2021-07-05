@@ -1,0 +1,45 @@
+<div class="container">
+        <div class="row">
+    
+            <div class="col s12">
+                <a style="margin-top: 10px;" class="waves-effect waves-light btn indigo darken-4" routerLink="/"><i
+                        class="material-icons white-text">arrow_back</i></a>
+                <div class="card">
+                    <div class="card-content">
+                        <form (submit)="submit($event)">
+                            <div class="row">
+                                <div class="col s12">
+                                    <div class="card-title">Acceso pacientes</div>
+    
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" class="validate" required id="txtUsuario">
+                                    <label>Usuario</label>
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="password" class="validate" required id="txtContraseña">
+                                    <label>Contraseña</label>
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div style="margin-top: 15px" class="col s12">
+                                    <button type="submit"
+                                        class="waves-effect waves-light m-btn btn-large indigo darken-4"
+                                        style="width: 100%;">Iniciar sesión
+                                </button></div>
+                            </div>
+                        </form>
+    
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>

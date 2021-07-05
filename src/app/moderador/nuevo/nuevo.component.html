@@ -1,0 +1,27 @@
+<form (submit)="submit($event)" >
+    <div class="row">
+        <div class="input-field col s12">
+            <input type="text" class="validate" id="txtNombres" required>
+            <label>Nombres</label>
+        </div>
+        <div class="input-field col s12">
+            <input type="text" class="validate" id="txtApellidos" required>
+            <label>Apellidos</label>
+        </div>
+        <div class="input-field col s12">
+            <input type="text" class="validate" id="txtUsuario" required>
+            <label>Usuario</label>
+        </div>
+        <div class="input-field col s12">
+            <input type="password" class="validate" id="txtContraseña" required>
+            <label>Contraseña</label>
+        </div>
+    </div>
+    <div class="row">
+        <div style="margin-top: 15px" class="col s12">
+            <button type="submit" class="waves-effect waves-light m-btn btn-large indigo darken-4"
+                style="width: 100%;">Registrarse
+            </button>
+        </div>
+    </div>
+</form>

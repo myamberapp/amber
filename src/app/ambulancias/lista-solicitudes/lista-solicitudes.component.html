@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <a style="margin-top: 10px;" class="waves-effect waves-light btn indigo darken-4 "
+                (click)="logout()">Salir</a>
+
+            <div class="row">
+                <div class="col s12">
+
+
+                    <ul class="tabs z-depth-1" style="margin-top: 10px;">
+                        <li class="tab col s6"><a class="active"  href="#solicitudes">Solicitudes disponibles</a>
+                        </li>
+                        <li class="tab col s6"><a href="#solicitudesTomadas">Solicitudes tomadas</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="col s12">
+                    <div class="card" id="solicitudes" style="margin-top: 10px;">
+                        <div class="card-content" style="padding: 20px 0px 0px 0px;">
+                            <div class="card-title" style="margin-left: 20px;">Solicitudes disponibles</div>
+                            <ul class="collection">
+                                <li class="collection-item avatar" *ngFor="let solicitud of solicitudes">
+                                    <p>
+                                        <b style="font-size: 1.3rem;">{{solicitud.ciudad}}</b><br>
+                                        <b>Fecha: </b>{{solicitud.createdAt.toDate() | date:'medium'}} <br>
+                                        <b>Solicitante: </b>{{solicitud.nombres}} {{solicitud.apellidos}}<br>
+                                        <b>Tipo de emergencia: </b>{{solicitud.tipoEmergencia}}
+                                    </p>
+                                    <span *ngIf="solicitud.disponible"
+                                        class="new badge secondary-content green darken-4"
+                                        data-badge-caption="">Disponible</span>
+                                    <span *ngIf="!solicitud.disponible" class="new badge secondary-content red darken-4"
+                                        data-badge-caption="">No disponible</span>
+
+                                    <div *ngIf="solicitud.disponible" class="" style="margin-top: 10px;">
+                                        <a (click)="tomar(solicitud)" class="waves-effect waves-light btn-small indigo darken-4" style="">Tomar</a>
+                                        <a (click)="map(solicitud.latitud, solicitud.longitud)"
+                                            class="waves-effect waves-light btn-small amber darken-1"
+                                            style="margin-left: 10px;">Ver ruta</a>
+
+                                    </div>
+
+                                </li>
+                                <li class="collection-item avatar" *ngIf="solicitudes.length == 0">
+                                    <p style="text-align: center; margin-top: 10px; font-size: 1.3rem;">No hay
+                                        resultados disponibles.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12">
+                        <div class="card" id="solicitudesTomadas" style="margin-top: 10px;">
+                            <div class="card-content" style="padding: 20px 0px 0px 0px;">
+                                <div class="card-title" style="margin-left: 20px;">Solicitudes tomadas</div>
+                                <app-lista-solicitudes-tomadas></app-lista-solicitudes-tomadas>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

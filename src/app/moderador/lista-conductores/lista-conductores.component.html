@@ -1,0 +1,29 @@
+<ul class="collection">
+    <li class="collection-item avatar" *ngFor="let conductor of conductores">
+        <p>
+            <b style="font-size: 1.3rem;">{{conductor.nombres}} {{conductor.apellidos}}</b><br>
+            <b>Documento: </b>{{conductor.documento}} <br>
+            <b>Licencia sanitaria: </b>{{conductor.licenciaSanitaria}}<br>
+            <b>Usuario: </b>{{conductor.usuario }} <br>
+            <b>Placa: </b>{{conductor.placa | uppercase}}
+        </p>
+        <span *ngIf="conductor.autorizado" class="new badge secondary-content green darken-4"
+            data-badge-caption="">Autorizado</span>
+        <span *ngIf="!conductor.autorizado" class="new badge secondary-content amber darken-1"
+            data-badge-caption="">Pendiente</span>
+
+        <div  style="margin-top: 10px;">
+            
+            <a *ngIf="conductor.autorizado" (click)="bloquear(conductor.id)"
+                class=" waves-effect waves-light btn-small amber darken-1" style="">Bloquear</a>
+            <a *ngIf="!conductor.autorizado" (click)="autorizar(conductor.id)"
+                class=" waves-effect waves-light btn-small green darken-4">Autorizar</a>
+            <a  (click)="eliminar(conductor.id)"
+                class=" waves-effect waves-light btn-small red darken-4" style="margin-left: 10px;">Eliminar</a>
+        </div>
+    </li>
+    <li class="collection-item avatar" *ngIf="conductores.length == 0">
+        <p style="text-align: center; margin-top: 10px; font-size: 1.3rem;">No hay
+            resultados disponibles.</p>
+    </li>
+</ul>

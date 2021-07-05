@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <a style="margin-top: 10px;" class="waves-effect waves-light btn indigo darken-4 "
+                (click)="logout()">Salir</a>
+
+
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs z-depth-1" style="margin-top: 10px;">
+                        <li class="tab col s6"><a class="active" href="#solicitudAmbulancia">Solicitar ambulancia</a>
+                        </li>
+                        <li class="tab col s6"><a  href="#misSolicitudes">Mis solicitudes</a></li>
+                    </ul>
+                </div>
+
+                <div class="col s12">
+                    <div class="card" id="solicitudAmbulancia" style="margin-top: 10px;">
+                        <div class="card-content">
+                            <div class="card-title">Solicitud de ambulancia</div>
+                            <form (submit)="submit($event)">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea id="txtTipoEmergencia" class="materialize-textarea"
+                                            required></textarea>
+                                        <label>Tipo de emergencia</label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div style="margin-top: 15px" class="col s12">
+                                        <button type="submit" id="btnPedirAmbulancia"
+                                            class="waves-effect waves-light m-btn btn-large indigo darken-4"
+                                            style="width: 100%;">Pedir ambulancia
+                                        </button></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12">
+                    <div class="card" id="misSolicitudes" style="margin-top: 10px;">
+                        <div class="card-content" style="padding: 20px 0px 0px 0px;">
+                            <div class="card-title" style="margin-left: 20px;">Mis solicitudes</div>
+                            <app-lista-solicitudes-paciente></app-lista-solicitudes-paciente>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

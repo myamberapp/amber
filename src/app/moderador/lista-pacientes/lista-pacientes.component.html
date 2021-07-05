@@ -1,0 +1,18 @@
+<ul class="collection">
+    <li class="collection-item avatar" *ngFor="let paciente of pacientes">
+        <p>
+            <b style="font-size: 1.3rem;">{{paciente.nombres}} {{paciente.apellidos}}</b><br>
+            <b>Documento: </b>{{paciente.documento}} <br>
+            <b>Usuario: </b>{{paciente.usuario }} <br>
+            <b>Ciudad: </b>{{paciente.ciudad}}
+        </p>
+        
+        <a (click)="eliminar(paciente.id)"
+                class="secondary-content waves-effect waves-light btn-small red darken-4" >Eliminar</a>
+        
+    </li>
+    <li class="collection-item avatar" *ngIf="pacientes.length == 0">
+        <p style="text-align: center; margin-top: 10px; font-size: 1.3rem;">No hay
+            resultados disponibles.</p>
+    </li>
+</ul>
